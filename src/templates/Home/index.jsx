@@ -1,4 +1,11 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { CounterContext } from '../../context/CounterContext/context';
 export const Home = () => {
-  return <h1>Hello Home</h1>;
+  const [state, actions] = useContext(CounterContext);
+
+  useEffect(() => {
+    actions.increase();
+  }, [actions]);
+
+  return <h1 onClick={() => actions.increase()}>Hello Home</h1>;
 };
