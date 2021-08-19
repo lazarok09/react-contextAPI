@@ -37,6 +37,6 @@ CounterContextProvider.propTypes = {
   children: P.node.isRequired,
   initialState: P.shape({
     counter: P.number,
-    loading: P.number,
+    loading: P.bool,
   }),
 };
